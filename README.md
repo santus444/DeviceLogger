@@ -1,4 +1,11 @@
 # DeviceLogger
+How to use this app:
+========
+Generate QR code for a device in the format:
+
+{"deviceName": "iPhone 6 plus",   "serialNumber": "sjdhayu232hjksada" }
+
+You can use http://www.qr-code-generator.com to generate code for the devices. Mentioned this in app help page inside app. 
 
 How to build this project:
 ============
