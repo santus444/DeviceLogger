@@ -28,6 +28,12 @@ android {
             debuggable false
             signingConfig signingConfigs.release
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            resValue 'string', 'app_name', '"Device Logger"'
+
+        }
+        debug {
+            versionNameSuffix = "-debug"
+            resValue 'string', 'app_name', '"debug-Device Logger"'
         }
     }
 }
