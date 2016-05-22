@@ -1,0 +1,30 @@
+<resources>
+    <string name="app_name">Device Logger</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+    <string name="action_settings">Settings</string>
+    <string name="button_checkout">Checkout</string>
+    <string name="lable_device_name">Device Name</string>
+    <string name="serialNumberLabel">Serial#</string>
+    <string name="invalidQRMessage">Not a valid QR Code, refer help section for valid format</string>
+    <string name="oauth2_format" translatable="false">oauth2:%s</string>
+    <string name="button_checkin">CheckIn</string>
+    <string name="help_text_device">Create the device info QR Code in the following Format:</string>
+    <string name="help_text_device_json" translatable="false">{\"deviceName\": \"iPhone 43\",   \"serialNumber\": \"dasdd343434\" }</string>
+    <string name="help_text_username">Create the User Name QR Code in the following Format:</string>
+    <string name="help_text_qrcode_gen_url">QR Code can be generated at: \n http://www.qr-code-generator.com</string>
+    <string name="icon_author_credit_text">Icons made by \n http://www.freepik.com from http://www.flaticon.com is licensed by http://creativecommons.org/licenses/by/3.0/</string>
+    <string name="no_data">No data available</string>
+    <string name="error_message_current_status_no_login">Please login to see the current device status</string>
+    <string name="error_message_checkout_without_sign_in">Please Sign-In to Checkout a device</string>
+    <string name="error_message_checkin_without_sign_in">Please Sign-In to CheckIn a device</string>
+    <string name="checkout_confirmation">CheckOut Confirmed</string>
+    <string name="error_message_devicename_serial_user_not_null">Please check Device Name, Serial Number and UserName are not Null or empty</string>
+    <string name="checkin_confirmation">CheckIn Confirmed</string>
+    <string name="error_message_google_singin_cancelled">The sign in was cancelled. Make sure you\'re connected to the internet and try again.</string>
+    <string name="error_message_error_handling_signin">"Error handling the sign in: "</string>
+    <string name="google_signin_success_confirmation_message">Success</string>
+    <string name="error_message_firebase_google_authentication" translatable="false">Firebase error:</string>
+</resources>
