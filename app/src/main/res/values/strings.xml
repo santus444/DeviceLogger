@@ -12,7 +12,6 @@
     <string name="button_checkin">CheckIn</string>
     <string name="help_text_device">Create the device info QR Code in the following Format:</string>
     <string name="help_text_device_json" translatable="false">{\"deviceName\": \"iPhone 43\",   \"serialNumber\": \"dasdd343434\" }</string>
-    <string name="help_text_username">Create the User Name QR Code in the following Format:</string>
     <string name="help_text_qrcode_gen_url">QR Code can be generated at: \n http://www.qr-code-generator.com</string>
     <string name="icon_author_credit_text">Icons made by \n http://www.freepik.com from http://www.flaticon.com is licensed by http://creativecommons.org/licenses/by/3.0/</string>
     <string name="no_data">No data available</string>
