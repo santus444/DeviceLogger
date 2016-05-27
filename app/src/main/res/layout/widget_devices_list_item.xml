@@ -3,6 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="@dimen/listItemHeight"
+    android:layout_margin="@dimen/layout_margin"
     android:orientation="horizontal">
 
     <TextView
@@ -11,6 +12,7 @@
         android:layout_height="match_parent"
         android:layout_weight="1"
         android:gravity="center_vertical|start|left"
+        android:textColor="@android:color/black"
         tools:text="Galaxy S4" />
 
     <TextView
@@ -18,6 +20,7 @@
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
         android:gravity="center_vertical|end|right"
+        android:textColor="@android:color/black"
         tools:text="santosh_reddy" />
 
 </LinearLayout>

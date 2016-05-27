@@ -21,7 +21,7 @@ import com.firebase.client.Firebase;
 import com.google.zxing.integration.android.IntentIntegrator;
 import com.google.zxing.integration.android.IntentResult;
 
-import devicelogger.fragments.CurrentStatus;
+import devicelogger.fragments.CurrentStatusFragment;
 import devicelogger.fragments.HelpFragment;
 import devicelogger.fragments.ScanFragment;
 import devicelogger.fragments.SignInFragment;
@@ -110,7 +110,7 @@ public class MainActivity extends AppCompatActivity
         if (id == R.id.nav_camera) {
             fm.beginTransaction().replace(R.id.content_frame, new ScanFragment()).commit();
         } else if (id == R.id.nav_slideshow) {
-            fm.beginTransaction().replace(R.id.content_frame, new CurrentStatus()).commit();
+            fm.beginTransaction().replace(R.id.content_frame, new CurrentStatusFragment()).commit();
         } else if (id == R.id.nav_user_account) {
             fm.beginTransaction().replace(R.id.content_frame, new SignInFragment()).commit();
         } else if (id == R.id.nav_help) {

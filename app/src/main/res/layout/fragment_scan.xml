@@ -45,7 +45,7 @@
                     android:textColor="@android:color/black" />
 
                 <TextView
-                    android:id="@+id/deviceName"
+                    android:id="@+id/list_item_deviceName"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_centerVertical="true"
@@ -67,9 +67,9 @@
                     android:layout_height="wrap_content"
                     android:layout_alignParentLeft="true"
                     android:layout_alignParentStart="true"
-                    android:layout_below="@+id/deviceName"
-                    android:layout_toLeftOf="@+id/deviceName"
-                    android:layout_toStartOf="@+id/deviceName"
+                    android:layout_below="@+id/list_item_deviceName"
+                    android:layout_toLeftOf="@+id/list_item_deviceName"
+                    android:layout_toStartOf="@+id/list_item_deviceName"
                     android:contentDescription="Serial Number of the device"
                     android:gravity="center|left|start"
                     android:text="@string/serialNumberLabel"
@@ -144,7 +144,7 @@
             android:textColor="@android:color/black" />
 
         <EditText
-            android:id="@+id/userName"
+            android:id="@+id/list_item_userName"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Enter/Scan User Id" />

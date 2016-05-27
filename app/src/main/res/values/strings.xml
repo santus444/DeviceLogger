@@ -25,4 +25,8 @@
     <string name="error_message_error_handling_signin">"Error handling the sign in: "</string>
     <string name="google_signin_success_confirmation_message">Success</string>
     <string name="error_message_firebase_google_authentication" translatable="false">Firebase error:</string>
+    <string name="no_network_message">Data connection not available.</string>
+    <string name="no_results_message">No results found.</string>
+    <string name="device_status_widget_label">Devices Status</string>
+    <string name="widget_title">Devices Status - click to lauch app</string>
 </resources>

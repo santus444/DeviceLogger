@@ -8,6 +8,7 @@ import android.view.View;
  * Created by santosh on 5/21/16.
  */
 public abstract class BaseFragment extends Fragment {
+
     protected void showErrorSnackBar(String s) {
         Snackbar.make(getView(), s, Snackbar.LENGTH_SHORT)
                 .setAction("Action", null).show();

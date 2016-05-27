@@ -1,5 +1,6 @@
 package devicelogger.fragments;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.util.Log;
@@ -11,9 +12,13 @@ import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.TextView;
 
+import com.firebase.client.DataSnapshot;
 import com.firebase.client.Firebase;
+import com.firebase.client.FirebaseError;
 import com.firebase.client.ServerValue;
+import com.firebase.client.ValueEventListener;
 import com.google.zxing.integration.android.IntentIntegrator;
+import com.santoshmandadi.deviceloggerone.AsyncTasks.FetchDevicesStatusTask;
 import com.santoshmandadi.deviceloggerone.R;
 import com.santoshmandadi.deviceloggerone.model.Device;
 import com.santoshmandadi.deviceloggerone.utils.Constants;
@@ -153,6 +158,27 @@ public class ScanFragment extends BaseFragment {
                 }
             }
         });
+        Firebase firebaseRef = new Firebase(Constants.FIREBASE_URL);
+        if (firebaseRef.getAuth() != null) {
+            Firebase listNameRef = new Firebase(Constants.FIREBASE_URL).child(firebaseRef.getAuth().getUid()).child(Constants.FIREBASE_LOCATION_CURRENT_LIST);
+            listNameRef.addValueEventListener(new ValueEventListener() {
+                @Override
+                public void onDataChange(DataSnapshot dataSnapshot) {
+                    FetchDevicesStatusTask fetchArtistsTask = new FetchDevicesStatusTask(getActivity());
+                    fetchArtistsTask.execute(dataSnapshot);
+                }
+
+                @Override
+                public void onCancelled(FirebaseError firebaseError) {
+                    switch (firebaseError.getCode()) {
+                        case FirebaseError.DISCONNECTED: {
+                            //noNetwork = true;
+                        }
+
+                    }
+                }
+            });
+        }
         return rootView;
     }
 
@@ -164,9 +190,17 @@ public class ScanFragment extends BaseFragment {
             Device deviceObj = new Device(deviceName, serialNumber, userName, dateLastChangedObj);
             firebase.child(firebase.getAuth().getUid()).child(Constants.FIREBASE_LOCATION_CURRENT_LIST).child(serialNumber.toString()).setValue(deviceObj);
             showErrorSnackBar(getString(R.string.checkout_confirmation));
+
         } else {
             showErrorSnackBar(getView(), getString(R.string.error_message_devicename_serial_user_not_null));
         }
+    }
+
+    @Override
+    public void onPause() {
+        super.onPause();
+        updateWidgetData();
+
     }
 
     private void checkInDevice(CharSequence deviceName, CharSequence serialNumber) {
@@ -180,10 +214,15 @@ public class ScanFragment extends BaseFragment {
         }
     }
 
-    private void initializeElements(View rootView) {
-        userName = (EditText) rootView.findViewById(R.id.userName);
+    private void updateWidgetData() {
+        Intent dataUpdatedIntent = new Intent(FetchDevicesStatusTask.ACTION_DATA_UPDATED);
+        getActivity().sendBroadcast(dataUpdatedIntent);
+    }
 
-        deviceName = (TextView) rootView.findViewById(R.id.deviceName);
+    private void initializeElements(View rootView) {
+        userName = (EditText) rootView.findViewById(R.id.list_item_userName);
+
+        deviceName = (TextView) rootView.findViewById(R.id.list_item_deviceName);
         serialNumber = (TextView) rootView.findViewById(R.id.serialNumber);
         checkOutButton = (Button) rootView.findViewById(R.id.checkOut);
         checkInButton = (Button) rootView.findViewById(R.id.checkIn);

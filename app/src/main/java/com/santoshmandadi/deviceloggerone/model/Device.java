@@ -4,9 +4,6 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import java.util.HashMap;
 
-/**
- * Created by santosh on 5/21/16.
- */
 public class Device {
 
     private String user;
